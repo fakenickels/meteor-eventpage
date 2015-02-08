@@ -1,0 +1,36 @@
+@bg-menu-color: #C44D58;
+
+.navbar.home-menu {
+	border-radius: 0;
+	border: none;
+	background-color: @bg-menu-color;
+
+	.dropdown-menu {
+		background-color: @bg-menu-color;
+	}
+
+	.nav li > a, .navbar-header a, .dropdown-menu li > a {
+		color: #fff;
+
+		&:hover, &:visited {
+			color: #fff;
+			background-color: @bg-menu-color;
+			border: none;
+		}
+	}
+
+	.nav, .navbar-header {
+		font-family: Varela Round, sans-serif;
+		text-transform: lowercase;
+	}
+
+	.navbar {
+		.icon-bar {
+			color: #fff;
+		}
+	}
+
+	.login-button {
+		background-color: none;
+	}
+}
