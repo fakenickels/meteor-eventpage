@@ -17,7 +17,7 @@ Meteor.publish('userData', function(){
 	}
 });
 
-Meteor.publish(null, function(){
+Meteor.publish('images', function(){
 	return Images.find({});
 });
 
@@ -25,10 +25,10 @@ Meteor.publish('events', function(){
 	return Events.find({});
 });
 
-Meteor.publish(null, function(){
+Meteor.publish('courses', function(){
 	return Courses.find({});
 });
 
-Meteor.publish(null, function(){
+Meteor.publish('speakers', function(){
 	return Speakers.find({});
 });

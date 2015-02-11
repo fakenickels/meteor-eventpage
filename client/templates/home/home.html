@@ -1,4 +1,10 @@
 <template name="home">
+{{#if fbUnconfigured}}
+	<div class="text-center fb-unconfigured">
+		<button class="btn btn-primary">Configurar Faceboook</button>			
+	</div>
+{{/if}}
+
 <div class="header-mask" style="background-image: url({{ eventBanner }})">
 	<div class="jumbotron header-banner fullscreen">
 			<div class="container"> 
@@ -76,6 +82,18 @@
 <div class="speakers-container">
 	<div class="container">
 		<h2 class="page-header">Palestrantes</h2>
+
+		{{#each byGroup arr=speakers groupSize=3}}
+			<div class="row speakers-row">
+			{{#each this}}
+				<div class="col-md-4 speakers">
+					<img src="{{getFbAvatar fbId}}" class="img-circle">
+					<h3 class="speaker-title">{{name}}</h3>
+					<p class="speaker-bio">{{shortbio}}</p>
+				</div>
+			{{/each}}
+			</div>
+		{{/each}}				
 	</div>	
 </div>
 </template>

@@ -1,19 +1,12 @@
-<template name="dashboard_speakers">
-<div class="speakers-container">
-  <h2 class="page-header">Palestrantes</h2>
+<template name="speaker_update">
+  {{#autoForm collection="Speakers" doc=speaker id="speakerUpdate" type="update"}}
 
-  {{#eachSlice speakers 3}}
-    <div class="row speakers-row">
-    {{#each group}}
-      <div class="col-md-4 speakers">
-        <img src="" class="img-circle">
-        <h3 class="speaker-title">{{_id}}</h3>
-        <p class="speaker-bio">{{shortbio}}</p>
-        <div class='btn-group'>          
-        </div>
-      </div>
-    {{/each}}
-    </div>
-  {{/eachSlice}}
-</div>
+    <img class="img-circle" src="{{getFbAvatar speaker.fbId}}">
+
+    <input value="{{speaker.fbId}}" type="hidden"/>
+    {{> afQuickField name="name"}}
+    {{> afQuickField name="shortbio"}}
+
+    <button type="submit" class="btn btn-primary">Save</button>
+  {{/autoForm}}
 </template>

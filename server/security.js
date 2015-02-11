@@ -7,4 +7,4 @@ Images.allow({
 	download: function(userId, doc){
 		return true;
 	}
-})
+});
