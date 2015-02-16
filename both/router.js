@@ -1,5 +1,7 @@
 Router.route('home', {
 	layoutTemplate: 'HomeLayout',
+	
+	loadingTemplate: 'loading',
 
 	path: '/',
 
