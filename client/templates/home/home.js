@@ -10,4 +10,4 @@ Template.home.events({
 	'click .fb-unconfigured .btn': function(){
 		Accounts._loginButtonsSession.configureService('facebook');
 	}
-})
+});

@@ -5,7 +5,6 @@
 	</div>
 {{/if}}
 
-{{#contentFor "heading"}}
 <div class="header-mask" style="background-image: url({{ eventBanner }})">
 	<div class="jumbotron header-banner fullscreen">
 			<div class="container"> 
@@ -14,14 +13,29 @@
 					<p>{{eventMain.theme}}</p>
 				</div>
 				<div class="event-convertion">
-					<a href="#" class="btn btn-default btn-lg">
+					<a href="#" class="btn btn-default btn-lg btn-animated">
 						Participe!
 					</a>
 				</div>
 		</div>
 	</div>
 </div>
-{{/contentFor}}
+
+
+
+{{#if eventMain.description}}
+<div class="event-description-full default-container">
+	<div class="jumbotron">
+		<h2 class="default-title">O que vai ser o evento?</h2>
+		<div class="event-desc-text">
+			<p>{{ eventMain.description }}</p>
+			<p class="text-center"> 
+				<a href="#" class="btn btn-primary btn-lg btn-animated">Quero participar!</a>
+			</p>			
+		</div>	
+	</div>	
+</div>
+{{/if}}
 
 <div class="event-details-holder">
 	<div class="container">
@@ -65,25 +79,12 @@
 			</div>	
 		</div>
 	</div>	
-</div>
+</div>			
 
-{{ #if eventMain.description }}
-<div class="event-description-full">
-	<div class="jumbotron">
-		<h1>{{ eventMain.name }}</h1>
-		<div class="event-desc-text">
-			<p>{{ eventMain.description }}</p>
-			<p class="text-center"> 
-				<a href="#" class="btn btn-primary btn-lg">Quero participar!</a>
-			</p>			
-		</div>
-	</div>		
-</div>
-{{ /if }}
 
-<div class="speakers-container">
+<div class="speakers-container default-container">
 	<div class="container">
-		<h2 class="page-header">Palestrantes</h2>
+		<h2 class="default-title">Palestrantes</h2>
 
 		{{#each byGroup arr=speakers groupSize=3}}
 			<div class="row speakers-row">

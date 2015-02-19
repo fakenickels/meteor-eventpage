@@ -2,6 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Less here: http://lesscss.org/
 
+.btn-animated {
+	color: #fff;
+	background-color: rgba(199,244,100, 0);
+	border: 2px solid #fff;
+	border-radius: 0;
+	font-family: Varela Round, sans-serif;
+	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+	&:hover {
+		background-color: rgba(199,244,100, 1);
+		color: #333;
+		border: 2px solid #fff;
+	}
+}
+
+.default-title {
+	font-family: Raleway, sans-serif;
+	text-transform: uppercase;
+	margin-bottom: 30px;	
+}
+
+.default-container {
+	padding: 100px 0 100px 0;
+}
 
 .header-mask {
 	width: 100%;
@@ -19,20 +43,19 @@
 	color: #fff;
 	text-align: center;
 
-
 	.event-title {
 		word-wrap: break-word;
 		
 		h1 { 
-			font-family: Roboto Condensed; 
+			font-family: Raleway; 
 			font-size: 4em; 
 			text-transform: uppercase;
 			letter-spacing: 10px;
-			color: #C7F464;	
+			color: @event-header-title;	
 		}
 
 		p { 
-			font-family: Roboto Condensed;
+			font-family: Raleway;
 			font-size: 2em;
 		}
 
@@ -48,32 +71,19 @@
 	}
 
 	.event-convertion {
-		margin-top: 100px;
-
-		.btn {
-			color: #fff;
-			background-color: rgba(199,244,100, 0);
-			border: 2px solid #fff;
-			font-family: Roboto Condensed, sans-serif;
-			transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-
-			&:hover {
-				background-color: rgba(199,244,100, 1);
-				color: #333;
-			}
-		}
+		margin-top: 20px;
 	}
-
-
 }
 
 .event-details-holder {
+	margin: 0;
+	padding: 10px;
+	background-color: @event-description-bg;	
 
 	.event-details {
-		margin-top: 15px;
 
 		.icon-holder {
-			background-color: #4ECDC4;
+			background-color: @icon-color;
 			width: 64px;
 			padding: 14px 0;
 			font-size: 2em;
@@ -90,8 +100,9 @@
 
 			h3, p { 
 				margin: 0; 
-				font-family: Roboto Condensed;
+				font-family: Raleway;
 				text-shadow: 0;
+				color: #fff;
 			}
 
 			h3 {
@@ -103,20 +114,18 @@
 	}	
 }
 
-.event-description-full {
-	.jumbotron {
-		h1 {
-			font-family: Roboto Condensed, sans-serif;
-			text-align: center;
-		}
 
-		.event-desc-text {
-			margin-top: 30px;
-			padding: 0 30px 0 30px;
-		}
+.event-description-full {
+	padding: 0 10px 0 10px;
+	background-color: @event-description-bg;
+	text-align: center;
+
+	.jumbotron {
+		color: #fff;
+		margin: 0;
 
 		p {
-			font-family: Varela Round, sans-serif;
+			font-family: Raleway, sans-serif;
 		}
 
 		background: inherit;
@@ -125,6 +134,9 @@
 
 .speakers-container {
 	text-align: center;
+	background-color: #ED6464;
+	color: #fff;
+	font-family: Raleway;
 
 	.speakers-row {
 		.speakers {
@@ -139,13 +151,15 @@
 			}
 
 			.speaker-title {
-				font-family: Varela Round
+				font-family: Varela Round;
+				color: #fff;
 			}
 
 			.speaker-bio {
 				margin-top: 5px;
 				font-family: Raleway;
-				font-weight: 400
+				font-weight: 400;
+				color: #fff;
 			}
 		}
 	}
