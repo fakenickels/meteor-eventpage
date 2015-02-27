@@ -14,10 +14,19 @@ UI.registerHelper('byGroup', function(opts){
 	var groups = [];
 
 	if(!arr && !groupSize && _.isEmpty(arr)) return '';
+	if( !_.isArray(arr) ) arr = arr.fetch();
 
 	_.eachSlice(arr, groupSize, function(group, i){
 		groups.push(group);
 	});
 	
 	return groups;
+});
+
+UI.registerHelper('getEventBanner', function(eventMain){
+		if(eventMain.banner){
+			image = Images.findOne(eventMain.banner);
+
+			if( image ) return image.url();
+		} else return '';
 });

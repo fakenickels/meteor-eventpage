@@ -18,17 +18,23 @@ Router.route('home', {
 
 	data: function(){
 		if( !this.ready() ) return;
-		var eventMain = Events.findOne(), image;
+		var eventMain = Events.findOne();//, image, url;
 
-		if(eventMain){
-			if(eventMain.banner) image = Images.findOne(eventMain.banner).url();
-		}
+		// if(eventMain){
+		// 	if(eventMain.banner){
+		// 		image = Images.findOne(eventMain.banner);
+
+		// 		if( image ) url = image.url();
+		// 	}
+		// } else {
+		// 	return;
+		// }
 
 		return {
 			eventMain: eventMain,
-			eventBanner: image,
+			// eventBanner: url,
 
-			speakers: Speakers.find(),
+			speakers: Speakers.find().fetch(),
 
 			courses: [
 				{name: 'Using Sun Overdrive'}

@@ -5,7 +5,7 @@
 	</div>
 {{/if}}
 
-<div class="header-mask" style="background-image: url({{ eventBanner }})">
+<div class="header-mask" style="background-image: url({{ getEventBanner eventMain }})">
 	<div class="jumbotron header-banner fullscreen">
 			<div class="container"> 
 				<div class="event-title">
@@ -85,18 +85,6 @@
 <div class="speakers-container default-container">
 	<div class="container">
 		<h2 class="default-title">Palestrantes & Cursos</h2>
-
-		{{#each byGroup arr=speakers groupSize=3}}
-			<div class="row speakers-row">
-			{{#each this}}
-				<div class="col-md-4 speakers">
-					<img src="{{getFbAvatar fbId}}" class="img-circle">
-					<h3 class="speaker-title">{{name}}</h3>
-					<p class="speaker-bio">{{shortbio}}</p>
-				</div>
-			{{/each}}
-			</div>
-		{{/each}}
 
 		{{#each byGroup arr=speakers groupSize=3}}
 			<div class="row speakers-row">
