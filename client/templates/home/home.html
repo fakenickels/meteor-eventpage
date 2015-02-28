@@ -6,79 +6,75 @@
 {{/if}}
 
 <div class="header-mask" style="background-image: url({{ getEventBanner eventMain }})">
-	<div class="jumbotron header-banner fullscreen">
-			<div class="container"> 
-				<div class="event-title">
-					<h1>{{eventMain.name}}</h1>
-					<p>{{eventMain.theme}}</p>
-				</div>
-				<div class="event-convertion">
-					<a href="#" class="btn btn-default btn-lg btn-animated">
-						Participe!
-					</a>
-				</div>
+		<div class="container"> 
+			<div class="event-title">
+				<h1>{{eventMain.name}}</h1>
+				<p>{{eventMain.theme}}</p>
+			</div>
+			<div class="event-convertion">
+				<a href="#" class="btn btn-default btn-lg btn-animated">
+					Participe!
+				</a>
+			</div>
 		</div>
-	</div>
+
+		<div class="event-details-holder">
+		<div class="container">
+			<div class="event-details row">
+				<div class="event-when col-md-3">
+					<div class="icon-holder">
+						<i class="fa fa-calendar-o"></i>
+					</div>
+					<div class="sayings">
+						<h3>Quando</h3>
+						<p>{{ eventMain.when }}</p>
+					</div>
+				</div> 
+				<div class="event-where col-md-3">
+					<div class="icon-holder">	
+						<i class="fa fa-map-marker"></i>
+					</div>
+					<div class="sayings">
+						<h3>Onde</h3>
+						<p>{{ eventMain.where }}</p>
+					</div>
+				</div>
+				<div class="event-speakers col-md-3">
+					<div class="icon-holder">	
+						<i class="fa fa-users"></i>
+					</div>
+					<div class="sayings">
+						<h3>{{ speakers.count }}</h3>
+						<p>Palestrantes</p>
+					</div>			
+				</div>				
+
+				<div class="event-courses col-md-3">
+					<div class="icon-holder">	
+						<i class="fa fa-users"></i>
+					</div>
+					<div class="sayings">
+						<h3>{{ courses.count }}</h3>
+						<p>Palestras/Mini-cursos</p>
+					</div>			
+				</div>	
+			</div>
+		</div>
+		</div>			
 </div>
 
 
-
-<div class="event-description-full default-container">
+<div class="event-description-full default-container fullscreen">
 	<div class="jumbotron">
-		<h2 class="default-title">O que vai ser o evento?</h2>
-		<div class="event-desc-text">
+		<h2 class="default-title col-md-6">O que vai ser o evento?</h2>
+		<div class="event-desc-text col-md-6">
 			<p>{{ eventMain.description }}</p>
 			<p class="text-center"> 
 				<a href="#" class="btn btn-primary btn-lg btn-animated">Quero participar!</a>
 			</p>			
 		</div>	
 	</div>	
-</div>
-
-<div class="event-details-holder">
-	<div class="container">
-		<div class="event-details row">
-			<div class="event-when col-md-3">
-				<div class="icon-holder">
-					<i class="fa fa-calendar-o"></i>
-				</div>
-				<div class="sayings">
-					<h3>Quando</h3>
-					<p>{{ eventMain.when }}</p>
-				</div>
-			</div> 
-			<div class="event-where col-md-3">
-				<div class="icon-holder">	
-					<i class="fa fa-map-marker"></i>
-				</div>
-				<div class="sayings">
-					<h3>Onde</h3>
-					<p>{{ eventMain.where }}</p>
-				</div>
-			</div>
-			<div class="event-speakers col-md-3">
-				<div class="icon-holder">	
-					<i class="fa fa-users"></i>
-				</div>
-				<div class="sayings">
-					<h3>{{ speakers.count }}</h3>
-					<p>Palestrantes</p>
-				</div>			
-			</div>				
-
-			<div class="event-courses col-md-3">
-				<div class="icon-holder">	
-					<i class="fa fa-users"></i>
-				</div>
-				<div class="sayings">
-					<h3>{{ courses.count }}</h3>
-					<p>Palestras/Mini-cursos</p>
-				</div>			
-			</div>	
-		</div>
-	</div>	
 </div>			
-
 
 <div class="speakers-container default-container">
 	<div class="container">
