@@ -23,7 +23,6 @@
 
 
 
-{{#if eventMain.description}}
 <div class="event-description-full default-container">
 	<div class="jumbotron">
 		<h2 class="default-title">O que vai ser o evento?</h2>
@@ -35,7 +34,6 @@
 		</div>	
 	</div>	
 </div>
-{{/if}}
 
 <div class="event-details-holder">
 	<div class="container">
@@ -63,7 +61,7 @@
 					<i class="fa fa-users"></i>
 				</div>
 				<div class="sayings">
-					<h3>{{ speakers.length }}</h3>
+					<h3>{{ speakers.count }}</h3>
 					<p>Palestrantes</p>
 				</div>			
 			</div>				
@@ -73,7 +71,7 @@
 					<i class="fa fa-users"></i>
 				</div>
 				<div class="sayings">
-					<h3>{{ courses.length }}</h3>
+					<h3>{{ courses.count }}</h3>
 					<p>Palestras/Mini-cursos</p>
 				</div>			
 			</div>	
