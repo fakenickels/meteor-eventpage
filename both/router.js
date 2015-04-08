@@ -1,23 +1,20 @@
-Router.route('home', {
+Router.route( 'home', {
 	layoutTemplate: 'HomeLayout',
-	
 	loadingTemplate: 'loading',
-
 	path: '/',
-
 	template: 'home',
 
-	waitOn: function(){
+	waitOn: function() {
 		return [ 
-			Meteor.subscribe('events'),
-			Meteor.subscribe('images'),
-			Meteor.subscribe('courses'),
-			Meteor.subscribe('speakers')
+			Meteor.subscribe( 'events' ),
+			Meteor.subscribe( 'images' ),
+			Meteor.subscribe( 'courses' ),
+			Meteor.subscribe( 'speakers' )
 		];
 	},	
 
-	data: function(){
-		if( !this.ready() ) return;
+	data: function() {
+		if ( !this.ready() ) return;
 
 		return {
 			eventMain: Events.findOne(),
@@ -39,4 +36,4 @@ Router.route('home', {
 			]			
 		}		
 	}
-});
+} );

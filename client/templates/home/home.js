@@ -1,13 +1,13 @@
-Template.home.helpers({
-	fbUnconfigured: function(){
+Template.home.helpers( {
+	fbUnconfigured: function() {
 		return (
-			_.isEmpty(ServiceConfiguration.configurations.find({service: 'facebook'}).fetch())
+			_.isEmpty( ServiceConfiguration.configurations.find( { service: 'facebook' } ).fetch() )
 		);
 	}
-});
+} );
 
-Template.home.events({
-	'click .fb-unconfigured .btn': function(){
-		Accounts._loginButtonsSession.configureService('facebook');
+Template.home.events( {
+	'click .fb-unconfigured .btn': function() {
+		Accounts._loginButtonsSession.configureService( 'facebook' );
 	}
-});
+} );

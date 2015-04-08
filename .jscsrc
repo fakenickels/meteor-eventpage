@@ -1,0 +1,22 @@
+{
+	"preset": "jquery",
+	"fileExtensions": [ ".js" ],
+
+	"requireParenthesesAroundIIFE": true,
+	"maximumLineLength": 120,
+	"validateLineBreaks": "LF",
+	"validateQuoteMarks": "'",
+
+	"disallowKeywords": ["with"],
+	"disallowSpacesInsideObjectBrackets": null,
+	"disallowImplicitTypeConversion": ["string"],
+	"disallowKeywordsOnNewLine": ["else"],
+	"disallowNewlineBeforeBlockStatements": true,
+	"disallowOperatorBeforeLineBreak": ["+", "."],
+
+	"safeContextKeyword": "_this",
+
+	"excludeFiles": [
+		".meteor/**"
+	]
+}
