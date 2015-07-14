@@ -7,13 +7,15 @@
 @bg-menu-color: #FFCC33;
 @event-header-title: #FFCC33;
 @event-description-bg: #FFAA54;
+@footer-color: darken(#A308A3, 10%);
+@event-page-footer: #A308A3;
 
 html, body {
 	height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: Roboto Condensed;
+	font-family: Raleway;
 }
 
 p {
@@ -28,15 +30,30 @@ p {
 }
 
 footer {
-	background-color: lighten(#000, 10%);
+	background-color: @footer-color;
 	color: #fff;
 	font-family: Raleway;
 
 	ul.social-networks {
 		list-style: none;
+		padding: 0;
 
 		li {
 			display: inline;
+			padding: 20px;
+		}
+	}
+
+	.event-page-footer {
+		background: @event-page-footer;
+		p {
+			margin: 0;
+			padding: 5px 0 5px 0;
+		}
+
+		a {
+			color: #fff;
+			font-weight: bold;
 		}
 	}
 }

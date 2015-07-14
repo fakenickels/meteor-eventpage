@@ -9,5 +9,13 @@ Template.home.helpers( {
 Template.home.events( {
 	'click .fb-unconfigured .btn': function() {
 		Accounts._loginButtonsSession.configureService( 'facebook' );
+	},
+
+	'click .event-sign-up-link': function(){
+		Meteor.loginWithFacebook(function(err){
+			if(!err){
+				Router.go('/user')
+			}
+		});
 	}
 } );

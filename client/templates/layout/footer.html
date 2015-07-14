@@ -1,18 +1,30 @@
 <template name="footer">
 	<footer>
-		<p class="text-center">
-			{{#each socialMedia}}
-			<a href="{{url}}" target="_blank">
-				<span class="fa-stack fa-2x">
-					<i class="fa fa-circle fa-stack-2x"></i>
-					<i class="fa fa-{{icon}} fa-stack-1x fa-inverse"></i>
-				</span>
-			</a>
-			{{/each}}			
-		</p>
+		<div class="container">
+			<div class="col-md-8">
+			<h2>{{eventMain.name}}</h2>
+			<p>{{eventMain.description}}</p>
+			</div>
+			{{#if socialMedia}}
+			<div class="col-md-4">
+				<h2>Fique conectado</h2>
+				<ul class="social-networks">
+					{{#each socialMedia}}
+						<li>
+							<a href="{{url}}"><i class="fa fa-2x fa-{{icon}} fa-inverse"></i></a>
+						</li>
+					{{/each}}
+				</ul>
+			</div>
+			{{/if}}
+		</div>
 
-		<p class="text-center">
-			EventPage
-		</p>
+		<div class="event-page-footer">
+			<div class="container">
+				<div class="col-md-12">
+					<p>EventPage, {{currentYear}} - Bootstrapper para sites de eventos em Meteor, criado por <a href="https://github.com/grsabreu/meteor-eventpage">Gabriel Rubens</a>.</p>
+				</div>
+			</div>	
+		</div>
 	</footer>
 </template>

@@ -7,16 +7,25 @@ Meteor.startup( function() {
 			theme: 'Tema do evento',
 			where: 'Av. do Evento',
 			when: '00 de algum mes',
-			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+			active: true,
+			count: 0
 		} );	
 	}
-
-	var firstUser = Meteor.users.findOne( {}, { sort: { createdAt: 1 } } );
-
-	if ( !_.isEmpty( firstUser ) ) {
-		if ( !Roles.userIsInRole( firstUser._id, 'admin' ) ) {
-			console.log( 'First user is admin' );
-			Roles.addUsersToRoles( firstUser._id, [ 'admin' ] );
-		}
-	}
 } );
+
+Meteor.users.after.insert(function(uid, doc){
+	if ( Meteor.users.find().count() === 1 ) {
+		Roles.addUsersToRoles( doc._id, [ 'admin' ] );
+	}
+
+	Events.update({
+		active: true
+	}, {
+		$inc: {
+			count: 1
+		}
+	});
+
+	return true;
+});

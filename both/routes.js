@@ -1,6 +1,10 @@
-Router.route( 'home', {
+EventController = RouteController.extend({
 	layoutTemplate: 'HomeLayout',
-	loadingTemplate: 'loading',
+	loadingTemplate: 'loading'
+});
+
+Router.route( 'home', {
+	controller: 'EventController',
 	path: '/',
 	template: 'home',
 
@@ -17,7 +21,7 @@ Router.route( 'home', {
 		if ( !this.ready() ) return;
 
 		return {
-			eventMain: Events.findOne(),
+			eventMain: Events.findOne({active: true}),
 
 			speakers: Speakers.find(),
 
@@ -37,3 +41,9 @@ Router.route( 'home', {
 		}		
 	}
 } );
+
+Router.route('ingress-message', {
+	controller: 'EventController',
+	path: '/user',
+	template: 'ingressMessage'
+});

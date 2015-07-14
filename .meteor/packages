@@ -24,3 +24,7 @@ yogiben:autoform-modals
 yogiben:admin
 service-configuration
 meteorhacks:fast-render
+dburles:collection-helpers
+msavin:mongol
+matb33:collection-hooks
+lookback:seo

@@ -11,11 +11,14 @@
 				<h1>{{eventMain.name}}</h1>
 				<p>{{eventMain.theme}}</p>
 			</div>
+
+			{{#unless currentUser}}
 			<div class="event-convertion">
-				<a href="#" class="btn btn-default btn-lg btn-animated">
+				<a href="#" class="btn btn-default btn-lg btn-animated event-sign-up-link">
 					Participe!
 				</a>
 			</div>
+			{{/unless}}
 		</div>
 
 		<div class="event-details-holder">
@@ -54,8 +57,8 @@
 						<i class="fa fa-users"></i>
 					</div>
 					<div class="sayings">
-						<h3>{{ courses.count }}</h3>
-						<p>Palestras/Mini-cursos</p>
+						<h3>{{ eventMain.count }}</h3>
+						<p>Participantes</p>
 					</div>			
 				</div>	
 			</div>
@@ -69,9 +72,11 @@
 		<h2 class="default-title col-md-6">O que vai ser o evento?</h2>
 		<div class="event-desc-text col-md-6">
 			<p>{{ eventMain.description }}</p>
+			{{#unless currentUser}}
 			<p class="text-center"> 
-				<a href="#" class="btn btn-primary btn-lg btn-animated">Quero participar!</a>
+				<a href="#" class="btn btn-primary btn-lg btn-animated event-sign-up-link">Quero participar!</a>
 			</p>			
+			{{/unless}}
 		</div>	
 	</div>	
 </div>			
