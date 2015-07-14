@@ -3,10 +3,44 @@ EventController = RouteController.extend({
 	loadingTemplate: 'loading'
 });
 
+if(Meteor.isClient){
+	Router.plugin('seo');
+}
+
 Router.route( 'home', {
 	controller: 'EventController',
 	path: '/',
 	template: 'home',
+
+	seo: {
+		title: function(){
+			return this.data().eventMain.name;
+		}, 
+
+		suffix: function(){
+			console.log(this.data().eventMain.theme);
+			return this.data().eventMain.theme;
+		},
+
+		separator: '|',
+
+		description: function(){
+			return this.data().eventMain.description;
+		},
+
+		image: function(){
+			var banner = this.data().eventMain.banner;
+			if ( banner ) {
+				image = Images.findOne( banner );
+
+				if ( image ) return image.url();
+			} else return;			
+		},
+
+		og: {
+			type: 'homepage'
+		}
+	},
 
 	waitOn: function() {
 		return [ 
