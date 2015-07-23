@@ -14,7 +14,9 @@ Template.home.events( {
 	'click .event-sign-up-link': function(){
 		Meteor.loginWithFacebook(function(err){
 			if(!err){
-				Router.go('/user')
+				toastr.success('Login efetuado!', 'Sucesso');
+			} else {
+				toastr.error('Hmmm... parece que ocorreu um erro no login', 'Erro!');
 			}
 		});
 	}
