@@ -14,7 +14,7 @@ Meteor.users.after.insert(function(uid, doc){
 	return true;
 });
 
-// yogben:admin don't know how to deal with a user doc that 
+// yogiben:admin don't know how to deal with a user doc that 
 // don't have an ´emails´ field, so I had to assure the creation of it.
 Meteor.users.before.insert(function(uid, doc){
 	doc.emails = [{
